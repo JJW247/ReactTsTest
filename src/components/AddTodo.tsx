@@ -7,11 +7,11 @@ import React, {
   SetStateAction,
 } from "react";
 
-import { ITodo } from "../components/Todolist";
+import { ITodoProps } from "./Todo";
 
 export interface ITodoListProps {
-  todos: ITodo[];
-  setTodos: Dispatch<SetStateAction<ITodo[]>>;
+  todos: ITodoProps[];
+  setTodos: Dispatch<SetStateAction<ITodoProps[]>>;
 }
 
 const AddTodo: FC<ITodoListProps> = ({ todos, setTodos }) => {

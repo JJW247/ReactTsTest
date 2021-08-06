@@ -1,4 +1,5 @@
-import React, { FC, useState } from "react";
+import React, { FC, Fragment, useState } from "react";
+import AddTodo from "./AddTodo";
 
 export interface ITodo {
   id: number;
@@ -21,11 +22,14 @@ const Todolist: FC = () => {
     },
   ]);
   return (
-    <ul>
-      {todos.map((todo) => {
-        return <li key={todo.id}>{todo.title}</li>;
-      })}
-    </ul>
+    <Fragment>
+      <AddTodo todos={todos} setTodos={setTodos} />
+      <ul>
+        {todos.map((todo) => {
+          return <li key={todo.id}>{todo.title}</li>;
+        })}
+      </ul>
+    </Fragment>
   );
 };
 

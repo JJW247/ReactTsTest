@@ -22,7 +22,15 @@ const Todolist: FC = () => {
       <AddTodo todos={todos} setTodos={setTodos} />
       <ul>
         {todos.map((todo) => {
-          return <Todo key={todo.id} id={todo.id} title={todo.title} />;
+          return (
+            <Todo
+              key={todo.id}
+              id={todo.id}
+              title={todo.title}
+              todos={todos}
+              setTodos={setTodos}
+            />
+          );
         })}
       </ul>
     </Fragment>

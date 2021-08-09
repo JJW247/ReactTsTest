@@ -46,16 +46,17 @@ const UpdateTodo: FC<ITodoListProps> = ({ id, title, todos, setTodos }) => {
       {updateToggle ? (
         <form onSubmit={onSubmitUpdateTodo}>
           <input
+            className="focus:outline-none border-2 focus:border-yellow-600"
             type="text"
             value={updateTodoTitle}
             onChange={onChangeUpdateTodo}
           />
-          <input type="submit" value="confirm" />
+          <input className="btn m-4" type="submit" value="confirm" />
         </form>
       ) : (
         <div>{title}</div>
       )}
-      <button onClick={onClickUpdateToggle}>
+      <button className="btn" onClick={onClickUpdateToggle}>
         {updateToggle ? "Cancel" : "Update"}
       </button>
     </React.Fragment>

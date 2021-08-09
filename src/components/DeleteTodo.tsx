@@ -10,7 +10,11 @@ const DeleteTodo: FC<ITodoListProps> = ({ id, title, todos, setTodos }) => {
     );
   };
 
-  return <button onClick={onClcikDeleteTodo}>Delete</button>;
+  return (
+    <button className="btn ml-4" onClick={onClcikDeleteTodo}>
+      Delete
+    </button>
+  );
 };
 
 export default DeleteTodo;

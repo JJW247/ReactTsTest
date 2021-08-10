@@ -9,7 +9,7 @@ export interface ITodoProps {
 
 const Todo: FC<ITodoListProps> = ({ id, title, todos, setTodos }) => {
   return (
-    <li>
+    <li className="flex items-center justify-between bg-white my-4 py-4">
       <UpdateTodo id={id} title={title} todos={todos} setTodos={setTodos} />
       <DeleteTodo id={id} title={title} todos={todos} setTodos={setTodos} />
     </li>

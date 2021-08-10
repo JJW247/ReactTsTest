@@ -1,4 +1,4 @@
-import React, {
+import {
   ChangeEvent,
   FC,
   FormEvent,
@@ -42,24 +42,29 @@ const UpdateTodo: FC<ITodoListProps> = ({ id, title, todos, setTodos }) => {
   };
 
   return (
-    <React.Fragment>
+    <>
       {updateToggle ? (
         <form onSubmit={onSubmitUpdateTodo}>
           <input
-            className="focus:outline-none border-2 focus:border-yellow-600"
+            className="input"
             type="text"
             value={updateTodoTitle}
             onChange={onChangeUpdateTodo}
           />
-          <input className="btn m-4" type="submit" value="confirm" />
+          <input className="btn" type="submit" value="confirm" />
         </form>
       ) : (
         <div>{title}</div>
       )}
-      <button className="btn" onClick={onClickUpdateToggle}>
+      <button
+        className={`p-2 rounded-lg ${
+          updateToggle ? "text-red-300 bg-blue-300" : "bg-red-300 text-blue-300"
+        }`}
+        onClick={onClickUpdateToggle}
+      >
         {updateToggle ? "Cancel" : "Update"}
       </button>
-    </React.Fragment>
+    </>
   );
 };
 

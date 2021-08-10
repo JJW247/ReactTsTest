@@ -29,7 +29,12 @@ const AddTodo: FC<ITodoListProps> = ({ todos, setTodos }) => {
   };
   return (
     <form onSubmit={onSubmitAddTodo}>
-      <input type="text" value={addTodoTitle} onChange={onChangeAddTodo} />
+      <input
+        className="input"
+        type="text"
+        value={addTodoTitle}
+        onChange={onChangeAddTodo}
+      />
       <input className="btn ml-4 mb-4" type="submit" value="add" />
     </form>
   );

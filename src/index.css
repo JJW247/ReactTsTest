@@ -11,5 +11,9 @@
 }
 
 .btn {
-  @apply bg-white text-blue-500 p-2 rounded-lg;
+  @apply bg-red-300 md:bg-red-500 text-blue-500 md:text-blue-700 p-2 rounded-lg;
+}
+
+.input {
+  @apply focus:outline-none border-2 focus:border-yellow-600;
 }

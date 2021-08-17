@@ -1,6 +1,6 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
-import Todolist from "./components/Todolist";
+import Todolist from './components/Todolist';
 
 const App: FC = () => {
   return <Todolist />;

@@ -5,8 +5,8 @@ import {
   useState,
   Dispatch,
   SetStateAction,
-} from "react";
-import { ITodoProps } from "./Todo";
+} from 'react';
+import { ITodoProps } from './Todo';
 
 export interface ITodoListProps extends ITodoProps {
   todos: ITodoProps[];
@@ -36,7 +36,7 @@ const UpdateTodo: FC<ITodoListProps> = ({ id, title, todos, setTodos }) => {
           return { id, title: updateTodoTitle };
         }
         return todo;
-      })
+      }),
     );
     setUpdateToggle(false);
   };
@@ -58,11 +58,11 @@ const UpdateTodo: FC<ITodoListProps> = ({ id, title, todos, setTodos }) => {
       )}
       <button
         className={`p-2 rounded-lg ${
-          updateToggle ? "text-red-300 bg-blue-300" : "bg-red-300 text-blue-300"
+          updateToggle ? 'text-red-300 bg-blue-300' : 'bg-red-300 text-blue-300'
         }`}
         onClick={onClickUpdateToggle}
       >
-        {updateToggle ? "Cancel" : "Update"}
+        {updateToggle ? 'Cancel' : 'Update'}
       </button>
     </>
   );

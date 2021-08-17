@@ -1,6 +1,6 @@
-import React, { FC } from "react";
-import DeleteTodo from "./DeleteTodo";
-import UpdateTodo, { ITodoListProps } from "./UpdateTodo";
+import React, { FC } from 'react';
+import DeleteTodo from './DeleteTodo';
+import UpdateTodo, { ITodoListProps } from './UpdateTodo';
 
 export interface ITodoProps {
   id: number;

@@ -4,7 +4,7 @@ import useSWR from 'swr';
 import AddTodo from './AddTodo';
 import Todo, { ITodoProps } from './Todo';
 
-interface ITodoBack {
+export interface ITodoBack {
   id: number;
   createdAt: Date;
   updatedAt: Date;
@@ -23,7 +23,7 @@ const Todolist: FC = () => {
     }
   };
 
-  const { data, error } = useSWR<ITodoBack[]>(
+  const { data, error, mutate } = useSWR<ITodoBack[]>(
     `${process.env.REACT_APP_BACK_URL}/todo`,
     fetcher,
   );
@@ -46,7 +46,7 @@ const Todolist: FC = () => {
         <div className="bg-gray-200 p-8 max-w-screen-md w-full rounded-2xl mx-8 md:mx-0">
           <div className="flex justify-center items-center">
             <div>
-              <AddTodo todos={data} setTodos={setTodos} />
+              <AddTodo todos={data} mutate={mutate} />
               <ul>
                 {data.map((todo) => {
                   return (

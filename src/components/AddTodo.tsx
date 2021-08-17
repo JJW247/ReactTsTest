@@ -7,6 +7,7 @@ import React, {
   Dispatch,
   SetStateAction,
 } from 'react';
+import { ITodoBack } from './Todolist';
 
 import { ITodoProps } from './Todo';
 
@@ -20,21 +21,10 @@ export interface ITodoListProps {
     desc: string;
     isCompleted: boolean;
   }[];
-  setTodos: Dispatch<
-    SetStateAction<
-      {
-        id: number;
-        createdAt: Date;
-        updatedAt: Date;
-        title: string;
-        desc: string;
-        isCompleted: boolean;
-      }[]
-    >
-  >;
+  mutate: any;
 }
 
-const AddTodo: FC<ITodoListProps> = ({ todos, setTodos }) => {
+const AddTodo: FC<ITodoListProps> = ({ todos, mutate }) => {
   const [addTodoTitle, setAddTodoTitle] = useState<string>('');
   const onChangeAddTodoTitle = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
@@ -71,6 +61,11 @@ const AddTodo: FC<ITodoListProps> = ({ todos, setTodos }) => {
         },
       );
       console.log(response.data);
+      if (response.statusText === 'Created') {
+        setAddTodoTitle('');
+        setAddTodoDesc('');
+        mutate();
+      }
     } catch (error) {}
   };
   return (
